@@ -10,14 +10,14 @@ class AppColors {
   static const Color primaryStrong = Color(0xFFE53945);
   static const Color primaryGlow = Color(0x59FF4D57);
 
-  // Grayscale Palette
+  // Grayscale Palette (Used primarily for Light Theme)
   static const Color grayscaleWhite = Color(0xFFFFFFFF);
-  static const Color grayscaleTitleActive = Color(0xFFFFFFFF);
-  static const Color grayscaleBodyText = Color(0xFFA0A0A0);
-  static const Color grayscaleButtonText = Color(0xFFA7A7A7);
-  static const Color grayscaleSecondaryButton = Color(0xFF111111);
-  static const Color grayscaleLine = Color(0x14FFFFFF);
-  static const Color grayscaleInputBackground = Color(0xFF151515);
+  static const Color grayscaleTitleActive = Color(0xFF141414); // Dark black for titles
+  static const Color grayscaleBodyText = Color(0xFF4A4A4A); // Dark gray for body
+  static const Color grayscaleButtonText = Color(0xFF7A7A7A); // Medium gray for inactive/button text
+  static const Color grayscaleSecondaryButton = Color(0xFFEBEBEB); // Light gray for secondary buttons
+  static const Color grayscaleLine = Color(0xFFE0E0E0); // Light gray for dividers/borders
+  static const Color grayscaleInputBackground = Color(0xFFF5F5F5); // Very light gray for inputs
   static const Color pageBackground = Color(0xFF050505);
   static const Color surfaceBackground = Color(0xFF0A0A0A);
   static const Color elevatedSurface = Color(0xFF151515);

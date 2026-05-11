@@ -34,7 +34,7 @@ class _AppTextFieldState extends State<AppTextField> {
         Text(
           widget.label,
           style: AppTypography.textSmall.copyWith(
-            color: AppColors.textMuted,
+            color: Theme.of(context).colorScheme.onSurface.withOpacity(0.5),
           ),
         ),
         const SizedBox(height: 4),
@@ -62,7 +62,7 @@ class _AppTextFieldState extends State<AppTextField> {
                           obscureText: widget.isPassword ? _obscureText : false,
                           keyboardType: widget.isPassword ? TextInputType.visiblePassword : widget.keyboardType,
                           style: AppTypography.textSmall.copyWith(
-                            color: AppColors.textPrimary,
+                            color: Theme.of(context).colorScheme.onSurface,
                           ),
                           onChanged: (value) {
                             field.didChange(value);
@@ -84,7 +84,7 @@ class _AppTextFieldState extends State<AppTextField> {
                         IconButton(
                           icon: Icon(
                             _obscureText ? Icons.visibility_off_outlined : Icons.visibility_outlined,
-                            color: AppColors.textPrimary,
+                            color: Theme.of(context).colorScheme.onSurface,
                             size: 20,
                           ),
                           onPressed: () {

@@ -22,7 +22,7 @@ class TopicSearchTile extends StatelessWidget {
       decoration: BoxDecoration(
         color: Theme.of(context).cardTheme.color,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: AppColors.borderSoft),
+        border: Border.all(color: Theme.of(context).dividerColor),
       ),
       child: Row(
         children: [
@@ -53,7 +53,7 @@ class TopicSearchTile extends StatelessWidget {
                 Text(
                   topic.title,
                   style: AppTypography.textMedium.copyWith(
-                    color: AppColors.textPrimary,
+                    color: Theme.of(context).colorScheme.onSurface,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -63,7 +63,7 @@ class TopicSearchTile extends StatelessWidget {
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: AppTypography.textSmall.copyWith(
-                    color: AppColors.textMuted,
+                    color: Theme.of(context).colorScheme.onSurface.withOpacity(0.5),
                     fontSize: 13,
                   ),
                 ),

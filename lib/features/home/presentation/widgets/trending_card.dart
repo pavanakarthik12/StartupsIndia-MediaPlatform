@@ -32,22 +32,24 @@ class TrendingCard extends StatelessWidget {
               fit: StackFit.expand,
               children: [
                 // ── Hero Image ─────────────────────────────────────
-                article.thumbnailAsset.startsWith('http')
-                    ? CachedNetworkImage(
-                        imageUrl: article.thumbnailAsset,
-                        fit: BoxFit.cover,
-                        placeholder: (context, _) => const ShimmerPlaceholder(
-                          width: double.infinity,
-                          height: double.infinity,
-                        ),
-                        errorWidget: (context, _, error) =>
-                            _buildImageFallback(),
-                      )
-                    : Image.asset(
-                        article.thumbnailAsset,
-                        fit: BoxFit.cover,
-                        errorBuilder: (context, error, stackTrace) =>
-                            _buildImageFallback(),
+                article.thumbnailAsset.isEmpty
+                    ? _buildImageFallback()
+                    : (article.thumbnailAsset.startsWith('http') || article.thumbnailAsset.startsWith('blob:'))
+                        ? CachedNetworkImage(
+                            imageUrl: article.thumbnailAsset,
+                            fit: BoxFit.cover,
+                            placeholder: (context, _) => const ShimmerPlaceholder(
+                              width: double.infinity,
+                              height: double.infinity,
+                            ),
+                            errorWidget: (context, _, error) =>
+                                _buildImageFallback(),
+                          )
+                        : Image.asset(
+                            article.thumbnailAsset,
+                            fit: BoxFit.cover,
+                            errorBuilder: (context, error, stackTrace) =>
+                                _buildImageFallback(),
                       ),
 
                 // ── Gradient overlay ────────────────────────────────
@@ -117,27 +119,29 @@ class TrendingCard extends StatelessWidget {
                         children: [
                           ClipRRect(
                             borderRadius: BorderRadius.circular(3),
-                            child: article.sourceLogoAsset.startsWith('http')
-                                ? CachedNetworkImage(
-                                    imageUrl: article.sourceLogoAsset,
-                                    width: 20,
-                                    height: 20,
-                                    fit: BoxFit.cover,
-                                    placeholder: (context, _) =>
-                                        const ShimmerPlaceholder(
-                                          width: 20,
-                                          height: 20,
-                                        ),
-                                    errorWidget: (context, _, error) =>
-                                        _sourceLogoFallback(),
-                                  )
-                                : Image.asset(
-                                    article.sourceLogoAsset,
-                                    width: 20,
-                                    height: 20,
-                                    fit: BoxFit.cover,
-                                    errorBuilder:
-                                        (context, error, stackTrace) =>
+                            child: article.sourceLogoAsset.isEmpty
+                                ? _sourceLogoFallback()
+                                : (article.sourceLogoAsset.startsWith('http') || article.sourceLogoAsset.startsWith('blob:'))
+                                    ? CachedNetworkImage(
+                                        imageUrl: article.sourceLogoAsset,
+                                        width: 20,
+                                        height: 20,
+                                        fit: BoxFit.cover,
+                                        placeholder: (context, _) =>
+                                            const ShimmerPlaceholder(
+                                              width: 20,
+                                              height: 20,
+                                            ),
+                                        errorWidget: (context, _, error) =>
+                                            _sourceLogoFallback(),
+                                      )
+                                    : Image.asset(
+                                        article.sourceLogoAsset,
+                                        width: 20,
+                                        height: 20,
+                                        fit: BoxFit.cover,
+                                        errorBuilder:
+                                            (context, error, stackTrace) =>
                                             _sourceLogoFallback(),
                                   ),
                           ),

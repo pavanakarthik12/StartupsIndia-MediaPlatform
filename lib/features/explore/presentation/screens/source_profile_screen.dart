@@ -260,18 +260,20 @@ class _SourceAvatar extends StatelessWidget {
       child: SizedBox(
         width: 84,
         height: 84,
-        child: url.startsWith('http')
-            ? CachedNetworkImage(
-                imageUrl: url,
-                fit: BoxFit.cover,
-                placeholder: (_, __) => _fallback(),
-                errorWidget: (_, __, ___) => _fallback(),
-              )
-            : Image.asset(
-                url,
-                fit: BoxFit.cover,
-                errorBuilder: (_, __, ___) => _fallback(),
-              ),
+        child: url.isEmpty 
+            ? _fallback()
+            : (url.startsWith('http') || url.startsWith('blob:'))
+                ? CachedNetworkImage(
+                    imageUrl: url,
+                    fit: BoxFit.cover,
+                    placeholder: (_, __) => _fallback(),
+                    errorWidget: (_, __, ___) => _fallback(),
+                  )
+                : Image.asset(
+                    url,
+                    fit: BoxFit.cover,
+                    errorBuilder: (_, __, ___) => _fallback(),
+                  ),
       ),
     );
   }

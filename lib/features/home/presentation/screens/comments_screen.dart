@@ -44,16 +44,16 @@ class _CommentsScreenState extends State<CommentsScreen> {
         elevation: 0,
         leading: IconButton(
           onPressed: () => Navigator.of(context).maybePop(),
-          icon: const Icon(
+          icon: Icon(
             Icons.arrow_back_ios_new_rounded,
-            color: AppColors.textPrimary,
+            color: Theme.of(context).colorScheme.onSurface,
             size: 20,
           ),
         ),
         title: Text(
           'Comments',
           style: AppTypography.textMedium.copyWith(
-            color: AppColors.textPrimary,
+            color: Theme.of(context).colorScheme.onSurface,
             fontWeight: FontWeight.w600,
           ),
         ),

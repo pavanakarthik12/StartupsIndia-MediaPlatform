@@ -96,25 +96,27 @@ class _NewsTileState extends ConsumerState<NewsTile> {
               tag: widget.article.id,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(8),
-                child: widget.article.thumbnailAsset.startsWith('http')
-                    ? CachedNetworkImage(
-                        imageUrl: widget.article.thumbnailAsset,
-                        width: 96,
-                        height: 96,
-                        fit: BoxFit.cover,
-                        placeholder: (context, url) =>
-                            const ShimmerPlaceholder(width: 96, height: 96),
-                        errorWidget: (context, url, error) =>
-                            _thumbnailFallback(),
-                      )
-                    : Image.asset(
-                        widget.article.thumbnailAsset,
-                        width: 96,
-                        height: 96,
-                        fit: BoxFit.cover,
-                        errorBuilder: (context, error, stackTrace) =>
-                            _thumbnailFallback(),
-                      ),
+                child: widget.article.thumbnailAsset.isEmpty
+                    ? _thumbnailFallback()
+                    : (widget.article.thumbnailAsset.startsWith('http') || widget.article.thumbnailAsset.startsWith('blob:'))
+                        ? CachedNetworkImage(
+                            imageUrl: widget.article.thumbnailAsset,
+                            width: 96,
+                            height: 96,
+                            fit: BoxFit.cover,
+                            placeholder: (context, url) =>
+                                const ShimmerPlaceholder(width: 96, height: 96),
+                            errorWidget: (context, url, error) =>
+                                _thumbnailFallback(),
+                          )
+                        : Image.asset(
+                            widget.article.thumbnailAsset,
+                            width: 96,
+                            height: 96,
+                            fit: BoxFit.cover,
+                            errorBuilder: (context, error, stackTrace) =>
+                                _thumbnailFallback(),
+                          ),
               ),
             ),
 
@@ -156,28 +158,30 @@ class _NewsTileState extends ConsumerState<NewsTile> {
                     children: [
                       ClipRRect(
                         borderRadius: BorderRadius.circular(3),
-                        child: widget.article.sourceLogoAsset.startsWith('http')
-                            ? CachedNetworkImage(
-                                imageUrl: widget.article.sourceLogoAsset,
-                                width: 20,
-                                height: 20,
-                                fit: BoxFit.cover,
-                                placeholder: (context, url) =>
-                                    const ShimmerPlaceholder(
-                                      width: 20,
-                                      height: 20,
-                                    ),
-                                errorWidget: (context, url, error) =>
-                                    _logoFallback(),
-                              )
-                            : Image.asset(
-                                widget.article.sourceLogoAsset,
-                                width: 20,
-                                height: 20,
-                                fit: BoxFit.cover,
-                                errorBuilder: (context, error, stackTrace) =>
-                                    _logoFallback(),
-                              ),
+                        child: widget.article.sourceLogoAsset.isEmpty
+                            ? _logoFallback()
+                            : (widget.article.sourceLogoAsset.startsWith('http') || widget.article.sourceLogoAsset.startsWith('blob:'))
+                                ? CachedNetworkImage(
+                                    imageUrl: widget.article.sourceLogoAsset,
+                                    width: 20,
+                                    height: 20,
+                                    fit: BoxFit.cover,
+                                    placeholder: (context, url) =>
+                                        const ShimmerPlaceholder(
+                                          width: 20,
+                                          height: 20,
+                                        ),
+                                    errorWidget: (context, url, error) =>
+                                        _logoFallback(),
+                                  )
+                                : Image.asset(
+                                    widget.article.sourceLogoAsset,
+                                    width: 20,
+                                    height: 20,
+                                    fit: BoxFit.cover,
+                                    errorBuilder: (context, error, stackTrace) =>
+                                        _logoFallback(),
+                                  ),
                       ),
                       const SizedBox(width: 6),
                       Flexible(

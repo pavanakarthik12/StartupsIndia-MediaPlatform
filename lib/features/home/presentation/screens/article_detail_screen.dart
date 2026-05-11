@@ -67,25 +67,25 @@ class _ArticleDetailScreenState extends ConsumerState<ArticleDetailScreen> {
         elevation: 0,
         leading: IconButton(
           onPressed: () => Navigator.of(context).maybePop(),
-          icon: const Icon(
+          icon: Icon(
             Icons.arrow_back_ios_new_rounded,
-            color: AppColors.textPrimary,
+            color: Theme.of(context).colorScheme.onSurface,
             size: 20,
           ),
         ),
         actions: [
           IconButton(
             onPressed: _showSharePlaceholder,
-            icon: const Icon(
+            icon: Icon(
               Icons.share_outlined,
-              color: AppColors.textMuted,
+              color: Theme.of(context).colorScheme.onSurface.withOpacity(0.5),
             ),
           ),
           IconButton(
             onPressed: _showMenuPlaceholder,
-            icon: const Icon(
+            icon: Icon(
               Icons.more_vert_rounded,
-              color: AppColors.textMuted,
+              color: Theme.of(context).colorScheme.onSurface.withOpacity(0.5),
             ),
           ),
         ],
@@ -193,18 +193,20 @@ class _ArticleDetailScreenState extends ConsumerState<ArticleDetailScreen> {
       child: SizedBox(
         width: 44,
         height: 44,
-        child: logo.startsWith('http')
-            ? CachedNetworkImage(
-                imageUrl: logo,
-                fit: BoxFit.cover,
-                placeholder: (context, url) => _logoFallback(),
-                errorWidget: (context, url, error) => _logoFallback(),
-              )
-            : Image.asset(
-                logo,
-                fit: BoxFit.cover,
-                errorBuilder: (context, error, stackTrace) => _logoFallback(),
-              ),
+        child: logo.isEmpty 
+            ? _logoFallback() 
+            : (logo.startsWith('http') || logo.startsWith('blob:'))
+                ? CachedNetworkImage(
+                    imageUrl: logo,
+                    fit: BoxFit.cover,
+                    placeholder: (context, url) => _logoFallback(),
+                    errorWidget: (context, url, error) => _logoFallback(),
+                  )
+                : Image.asset(
+                    logo,
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) => _logoFallback(),
+                  ),
       ),
     );
   }
@@ -217,19 +219,21 @@ class _ArticleDetailScreenState extends ConsumerState<ArticleDetailScreen> {
         borderRadius: BorderRadius.circular(12),
         child: AspectRatio(
           aspectRatio: 16 / 10,
-          child: image.startsWith('http')
-              ? CachedNetworkImage(
-                  imageUrl: image,
-                  fit: BoxFit.cover,
-                  placeholder: (context, url) => _imageFallback(),
-                  errorWidget: (context, url, error) => _imageFallback(),
-                )
-              : Image.asset(
-                  image,
-                  fit: BoxFit.cover,
-                  errorBuilder: (context, error, stackTrace) =>
-                      _imageFallback(),
-                ),
+          child: image.isEmpty
+              ? _imageFallback()
+              : (image.startsWith('http') || image.startsWith('blob:'))
+                  ? CachedNetworkImage(
+                      imageUrl: image,
+                      fit: BoxFit.cover,
+                      placeholder: (context, url) => _imageFallback(),
+                      errorWidget: (context, url, error) => _imageFallback(),
+                    )
+                  : Image.asset(
+                      image,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) =>
+                          _imageFallback(),
+                    ),
         ),
       ),
     );

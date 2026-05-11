@@ -23,14 +23,14 @@ class SelectableTopicChip extends StatelessWidget {
           color: isSelected ? AppColors.primaryDefault : Colors.transparent,
           borderRadius: BorderRadius.circular(6),
           border: Border.all(
-            color: isSelected ? AppColors.primaryDefault : AppColors.borderSoft,
+            color: isSelected ? AppColors.primaryDefault : Theme.of(context).dividerColor,
             width: 1,
           ),
         ),
         child: Text(
           label,
           style: AppTypography.linkMedium.copyWith(
-            color: isSelected ? Colors.white : AppColors.textMuted,
+            color: isSelected ? Colors.white : Theme.of(context).colorScheme.onSurface.withOpacity(0.5),
           ),
         ),
       ),
