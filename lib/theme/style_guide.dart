@@ -6,25 +6,34 @@ import 'package:google_fonts/google_fonts.dart';
 /// simply change it here and the entire app will update.
 class AppColors {
   // Brand & Primary
-  static const Color primaryDefault = Color(0xFF1877F2); // "Brand Blue"
+  static const Color primaryDefault = Color(0xFFFF4D57);
+  static const Color primaryStrong = Color(0xFFE53945);
+  static const Color primaryGlow = Color(0x59FF4D57);
 
   // Grayscale Palette
   static const Color grayscaleWhite = Color(0xFFFFFFFF);
-  static const Color grayscaleTitleActive = Color(0xFF050505);
-  static const Color grayscaleBodyText = Color(0xFF4E4B66);
-  static const Color grayscaleButtonText = Color(0xFF667080);
-  static const Color grayscaleSecondaryButton = Color(0xFFEEF1F4);
-  static const Color grayscaleLine = Color(0xFFE4E4E4);
-  static const Color grayscaleInputBackground = Color(0xFFFAFAFA);
+  static const Color grayscaleTitleActive = Color(0xFFFFFFFF);
+  static const Color grayscaleBodyText = Color(0xFFA0A0A0);
+  static const Color grayscaleButtonText = Color(0xFFA7A7A7);
+  static const Color grayscaleSecondaryButton = Color(0xFF111111);
+  static const Color grayscaleLine = Color(0x14FFFFFF);
+  static const Color grayscaleInputBackground = Color(0xFF151515);
+  static const Color pageBackground = Color(0xFF050505);
+  static const Color surfaceBackground = Color(0xFF0A0A0A);
+  static const Color elevatedSurface = Color(0xFF151515);
+  static const Color glassSurface = Color(0x99111111);
+  static const Color borderSoft = Color(0x14FFFFFF);
+  static const Color textPrimary = Color(0xFFFFFFFF);
+  static const Color textMuted = Color(0xFFA0A0A0);
+  static const Color textInverse = Color(0xFF050505);
 
   // Status & Feedback
-  static const Color errorDefault = Color(0xFFED2E7E);
-  static const Color successDefault = Color(0xFF00BA88);
+  static const Color errorDefault = Color(0xFFFF4D57);
+  static const Color successDefault = Color(0xFF3DDC97);
   static const Color warningDefault = Color(0xFFF4B740);
-  // Added from Login Flow
-  static const Color errorLight = Color(0xFFFFF3F8);
-  static const Color errorDark = Color(0xFFC30052);
-  static const Color linkBlue = Color(0xFF5890FF);
+  static const Color errorLight = Color(0x26FF4D57);
+  static const Color errorDark = Color(0xFFE53945);
+  static const Color linkBlue = Color(0xFFFF4D57);
 }
 
 class AppTypography {

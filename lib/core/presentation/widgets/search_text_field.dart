@@ -24,26 +24,26 @@ class SearchTextField extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.grayscaleInputBackground,
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: AppColors.grayscaleLine),
+        border: Border.all(color: AppColors.borderSoft),
       ),
       child: TextField(
         controller: controller,
         focusNode: focusNode,
         autofocus: autofocus,
         style: AppTypography.textSmall.copyWith(
-          color: AppColors.grayscaleTitleActive,
+          color: AppColors.textPrimary,
         ),
         onChanged: onChanged,
         decoration: InputDecoration(
           hintText: hintText,
           hintStyle: AppTypography.textSmall.copyWith(
-            color: AppColors.grayscaleButtonText,
+            color: AppColors.textMuted,
           ),
           border: InputBorder.none,
           contentPadding: const EdgeInsets.symmetric(vertical: 13),
           prefixIcon: const Icon(
             Icons.search_rounded,
-            color: AppColors.grayscaleBodyText,
+            color: AppColors.textMuted,
             size: 20,
           ),
           suffixIcon: IconButton(
@@ -57,7 +57,7 @@ class SearchTextField extends StatelessWidget {
               controller.text.isEmpty
                   ? Icons.tune_rounded
                   : Icons.close_rounded,
-              color: AppColors.grayscaleBodyText,
+              color: AppColors.textMuted,
               size: 20,
             ),
           ),

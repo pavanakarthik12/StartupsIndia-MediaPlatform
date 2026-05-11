@@ -40,7 +40,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     final trendingNewsAsync = ref.watch(trendingNewsProvider);
 
     return Scaffold(
-      backgroundColor: AppColors.grayscaleWhite,
+      
 
       // ── Bottom Navigation Bar ───────────────────────────────────────
       bottomNavigationBar: widget.showBottomNav ? _buildBottomNav() : null,

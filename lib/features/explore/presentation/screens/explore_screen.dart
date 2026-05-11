@@ -24,7 +24,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.grayscaleWhite,
+      
       body: SafeArea(
         child: CustomScrollView(
           physics: const BouncingScrollPhysics(),

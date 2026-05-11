@@ -60,16 +60,16 @@ class _ArticleDetailScreenState extends ConsumerState<ArticleDetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.grayscaleWhite,
+      
       appBar: AppBar(
-        backgroundColor: AppColors.grayscaleWhite,
-        surfaceTintColor: AppColors.grayscaleWhite,
+        backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
           onPressed: () => Navigator.of(context).maybePop(),
           icon: const Icon(
             Icons.arrow_back_ios_new_rounded,
-            color: AppColors.grayscaleTitleActive,
+            color: AppColors.textPrimary,
             size: 20,
           ),
         ),
@@ -78,14 +78,14 @@ class _ArticleDetailScreenState extends ConsumerState<ArticleDetailScreen> {
             onPressed: _showSharePlaceholder,
             icon: const Icon(
               Icons.share_outlined,
-              color: AppColors.grayscaleBodyText,
+              color: AppColors.textMuted,
             ),
           ),
           IconButton(
             onPressed: _showMenuPlaceholder,
             icon: const Icon(
               Icons.more_vert_rounded,
-              color: AppColors.grayscaleBodyText,
+              color: AppColors.textMuted,
             ),
           ),
         ],

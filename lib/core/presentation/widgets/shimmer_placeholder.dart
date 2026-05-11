@@ -18,13 +18,13 @@ class ShimmerPlaceholder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
-      baseColor: AppColors.grayscaleSecondaryButton,
-      highlightColor: AppColors.grayscaleLine,
+      baseColor: AppColors.elevatedSurface,
+      highlightColor: AppColors.borderSoft,
       child: Container(
         width: width,
         height: height,
         decoration: BoxDecoration(
-          color: AppColors.grayscaleSecondaryButton,
+          color: Theme.of(context).cardTheme.color,
           borderRadius: borderRadius,
         ),
       ),

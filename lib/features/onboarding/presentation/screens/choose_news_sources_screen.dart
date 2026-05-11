@@ -58,7 +58,7 @@ class _ChooseNewsSourcesScreenState extends State<ChooseNewsSourcesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.grayscaleWhite,
+      
       body: SafeArea(
         child: Column(
           children: [

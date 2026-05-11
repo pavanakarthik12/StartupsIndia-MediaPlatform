@@ -37,7 +37,7 @@ class _MainAppScaffoldState extends ConsumerState<MainAppScaffold> {
     ref.watch(fcmTokenSyncProvider);
 
     return Scaffold(
-      backgroundColor: AppColors.grayscaleWhite,
+      
       body: IndexedStack(
         index: _navIndex,
         children: [
@@ -57,10 +57,10 @@ class _MainAppScaffoldState extends ConsumerState<MainAppScaffold> {
   Widget _buildBottomNav() {
     return Container(
       decoration: BoxDecoration(
-        color: AppColors.grayscaleWhite,
+        color: Theme.of(context).bottomNavigationBarTheme.backgroundColor ?? Colors.transparent,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.06),
+            color: AppColors.primaryGlow,
             blurRadius: 12,
             offset: const Offset(0, -2),
           ),
@@ -73,7 +73,7 @@ class _MainAppScaffoldState extends ConsumerState<MainAppScaffold> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         selectedItemColor: AppColors.primaryDefault,
-        unselectedItemColor: AppColors.grayscaleButtonText,
+        unselectedItemColor: AppColors.textMuted,
         selectedLabelStyle: AppTypography.textSmall.copyWith(
           fontSize: 10,
           fontWeight: FontWeight.w600,

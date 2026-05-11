@@ -47,7 +47,7 @@ class _SourceProfileScreenState extends State<SourceProfileScreen> {
     final articles = _activeArticles;
 
     return Scaffold(
-      backgroundColor: AppColors.grayscaleWhite,
+      
       body: SafeArea(
         child: CustomScrollView(
           cacheExtent: 900,

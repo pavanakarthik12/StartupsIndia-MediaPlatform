@@ -15,9 +15,9 @@ class TrendingScreen extends ConsumerWidget {
     final trendingAsync = ref.watch(trendingNewsProvider);
 
     return Scaffold(
-      backgroundColor: AppColors.grayscaleWhite,
+      
       appBar: AppBar(
-        backgroundColor: AppColors.grayscaleWhite,
+        backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
         leading: IconButton(

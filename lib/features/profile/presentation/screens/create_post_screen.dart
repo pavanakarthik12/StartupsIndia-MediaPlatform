@@ -57,11 +57,11 @@ class _CreatePostScreenState extends ConsumerState<CreatePostScreen> {
 
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      backgroundColor: AppColors.grayscaleWhite,
+      
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: AppColors.grayscaleWhite,
-        surfaceTintColor: AppColors.grayscaleWhite,
+        backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
           onPressed: () => Navigator.of(context).maybePop(),

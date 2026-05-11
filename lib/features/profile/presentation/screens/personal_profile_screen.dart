@@ -64,7 +64,7 @@ class _PersonalProfileScreenState extends ConsumerState<PersonalProfileScreen> {
             : recentItems;
 
         return Scaffold(
-          backgroundColor: AppColors.grayscaleWhite,
+          
           floatingActionButton: FloatingActionButton(
             onPressed: () => Navigator.pushNamed(context, '/create-post'),
             backgroundColor: AppColors.primaryDefault,

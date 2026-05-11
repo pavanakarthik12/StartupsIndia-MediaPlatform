@@ -21,9 +21,9 @@ class _NotificationsScreenState extends ConsumerState<NotificationsScreen> {
     final notificationsAsync = ref.watch(userNotificationsProvider);
 
     return Scaffold(
-      backgroundColor: AppColors.grayscaleWhite,
+      
       appBar: AppBar(
-        backgroundColor: AppColors.grayscaleWhite,
+        backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
         leading: IconButton(

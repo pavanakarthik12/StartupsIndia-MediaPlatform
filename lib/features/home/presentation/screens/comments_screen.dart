@@ -37,23 +37,23 @@ class _CommentsScreenState extends State<CommentsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      backgroundColor: AppColors.grayscaleWhite,
+      
       appBar: AppBar(
-        backgroundColor: AppColors.grayscaleWhite,
-        surfaceTintColor: AppColors.grayscaleWhite,
+        backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
           onPressed: () => Navigator.of(context).maybePop(),
           icon: const Icon(
             Icons.arrow_back_ios_new_rounded,
-            color: AppColors.grayscaleTitleActive,
+            color: AppColors.textPrimary,
             size: 20,
           ),
         ),
         title: Text(
           'Comments',
           style: AppTypography.textMedium.copyWith(
-            color: AppColors.grayscaleTitleActive,
+            color: AppColors.textPrimary,
             fontWeight: FontWeight.w600,
           ),
         ),

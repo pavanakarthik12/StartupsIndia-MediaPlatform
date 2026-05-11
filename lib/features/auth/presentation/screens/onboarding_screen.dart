@@ -77,7 +77,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.grayscaleWhite,
+      
       body: Column(
         children: [
           // Expand PageView to take up most of the screen

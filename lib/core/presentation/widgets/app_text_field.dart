@@ -34,7 +34,7 @@ class _AppTextFieldState extends State<AppTextField> {
         Text(
           widget.label,
           style: AppTypography.textSmall.copyWith(
-            color: AppColors.grayscaleBodyText,
+            color: AppColors.textMuted,
           ),
         ),
         const SizedBox(height: 4),
@@ -47,10 +47,10 @@ class _AppTextFieldState extends State<AppTextField> {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                    color: hasError ? AppColors.errorLight : AppColors.grayscaleWhite,
+                    color: hasError ? AppColors.errorLight : AppColors.grayscaleInputBackground,
                     borderRadius: BorderRadius.circular(6),
                     border: Border.all(
-                      color: hasError ? AppColors.errorDark : AppColors.grayscaleBodyText,
+                      color: hasError ? AppColors.errorDark : AppColors.borderSoft,
                       width: 1,
                     ),
                   ),
@@ -62,7 +62,7 @@ class _AppTextFieldState extends State<AppTextField> {
                           obscureText: widget.isPassword ? _obscureText : false,
                           keyboardType: widget.isPassword ? TextInputType.visiblePassword : widget.keyboardType,
                           style: AppTypography.textSmall.copyWith(
-                            color: AppColors.grayscaleTitleActive,
+                            color: AppColors.textPrimary,
                           ),
                           onChanged: (value) {
                             field.didChange(value);
@@ -84,7 +84,7 @@ class _AppTextFieldState extends State<AppTextField> {
                         IconButton(
                           icon: Icon(
                             _obscureText ? Icons.visibility_off_outlined : Icons.visibility_outlined,
-                            color: AppColors.grayscaleTitleActive,
+                            color: AppColors.textPrimary,
                             size: 20,
                           ),
                           onPressed: () {

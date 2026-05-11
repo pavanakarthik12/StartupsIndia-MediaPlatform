@@ -43,7 +43,7 @@ class _ChooseTopicsScreenState extends State<ChooseTopicsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.grayscaleWhite,
+      
       body: SafeArea(
         child: Column(
           children: [

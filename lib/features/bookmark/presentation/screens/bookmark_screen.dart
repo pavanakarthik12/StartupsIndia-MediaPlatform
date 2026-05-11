@@ -51,7 +51,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
     final filteredBookmarks = _filteredBookmarks;
 
     return Scaffold(
-      backgroundColor: AppColors.grayscaleWhite,
+      
       body: SafeArea(
         child: Column(
           children: [

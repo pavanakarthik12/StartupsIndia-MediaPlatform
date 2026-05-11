@@ -20,9 +20,9 @@ class TopicSearchTile extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 24, vertical: 6),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: AppColors.grayscaleWhite,
+        color: Theme.of(context).cardTheme.color,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: AppColors.grayscaleLine),
+        border: Border.all(color: AppColors.borderSoft),
       ),
       child: Row(
         children: [
@@ -53,7 +53,7 @@ class TopicSearchTile extends StatelessWidget {
                 Text(
                   topic.title,
                   style: AppTypography.textMedium.copyWith(
-                    color: AppColors.grayscaleTitleActive,
+                    color: AppColors.textPrimary,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -63,7 +63,7 @@ class TopicSearchTile extends StatelessWidget {
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: AppTypography.textSmall.copyWith(
-                    color: AppColors.grayscaleBodyText,
+                    color: AppColors.textMuted,
                     fontSize: 13,
                   ),
                 ),
